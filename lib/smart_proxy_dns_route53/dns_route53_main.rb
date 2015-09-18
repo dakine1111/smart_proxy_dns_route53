@@ -12,7 +12,8 @@ module Proxy::Dns::Route53
     def self.record(attrs = {})
       new(attrs.merge(
         :aws_access_key => ::Proxy::Dns::Route53::Plugin.settings.aws_access_key,
-        :aws_secret_key => ::Proxy::Dns::Route53::Plugin.settings.aws_secret_key
+        :aws_secret_key => ::Proxy::Dns::Route53::Plugin.settings.aws_secret_key,
+        :ttl => ::Proxy::Dns::Plugin.settings.dns_ttl
       ))
     end
 
